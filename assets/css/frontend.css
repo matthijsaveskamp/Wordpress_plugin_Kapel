@@ -1,0 +1,183 @@
+/* Frontend Styles voor Kapel Footer Gallery */
+
+.kapel-footer-gallery {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+.kfg-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.kfg-slide.active {
+    display: block;
+    opacity: 1;
+}
+
+.kfg-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Bestandsnaam onder foto */
+.kfg-filename {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 5;
+}
+
+/* Navigatie pijlen */
+.kfg-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    padding: 0;
+}
+
+.kfg-arrow-prev {
+    left: 10px;
+}
+
+.kfg-arrow-next {
+    right: 10px;
+}
+
+.kapel-footer-gallery:hover .kfg-arrow {
+    opacity: 1;
+}
+
+.kfg-arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.kfg-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* Widget specifieke stijlen */
+.widget .kapel-footer-gallery {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer specifieke stijlen */
+footer .kapel-footer-gallery {
+    margin: 20px 0;
+}
+
+/* Responsive aanpassingen */
+@media screen and (max-width: 768px) {
+    .kfg-arrow {
+        font-size: 32px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .kfg-arrow-prev {
+        left: 5px;
+    }
+    
+    .kfg-arrow-next {
+        right: 5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .kfg-arrow {
+        font-size: 28px;
+        width: 35px;
+        height: 35px;
+    }
+    
+    /* Toon pijlen altijd op mobiel voor betere toegankelijkheid */
+    .kapel-footer-gallery .kfg-arrow {
+        opacity: 0.7;
+    }
+    
+    .kapel-footer-gallery:hover .kfg-arrow,
+    .kapel-footer-gallery .kfg-arrow:hover {
+        opacity: 1;
+    }
+}
+
+/* Animaties voor slide effect */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* Laad animatie */
+.kfg-slide img {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Subtiele zoom op hover (optioneel uitschakelen indien niet gewenst) */
+/* .kapel-footer-gallery:hover .kfg-slide img {
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+} */
+
+.kfg-slide img {
+    transition: transform 0.5s ease;
+}
