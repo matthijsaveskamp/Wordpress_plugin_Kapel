@@ -1,4 +1,4 @@
-# Kapel Footer Gallery 2 - WordPress Plugin
+# Kapel Footer Gallery 2 - (c) Matthijs Aveskamp 2025 - WordPress Plugin
 
 Een WordPress plugin waarmee je foto's uit je mediabibliotheek kunt selecteren en deze in een roterende footer gallery kunt tonen.
 
@@ -93,6 +93,7 @@ Voor vragen of problemen, neem contact op via matthijsaveskamp@gmail.com.
 
 ## Licentie
 
+(c) Matthijs Aveskamp 2025
 GPL v2 or later
 
 ## Changelog
